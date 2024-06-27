@@ -12,7 +12,7 @@ The aims of the ‘GenericsKbBSTApp’ and the ‘GenericsKbArrayApp’ are to p
 platforms for managing knowledge bases, but they use different underlying data structures, leading to distinct advantages and use cases.
 
 # Object-Oriented Design Overview
-# Classes:
+Classes:
 1. ‘Generics’ class:
 Purpose: Represents a Generics object in the Generics type array, containing 
 information about a specific term, sentence, and confidence score.
@@ -27,62 +27,39 @@ Relationships: Used as the data structure for storing information in the
 Purpose: Represents a Node object in the binary search tree (BST), containing 
 information about a specific term, sentence, and confidence score.
 
-# Key methods:
+Key methods:
 • Getters and setters for the term, sentence, and confidence score of the Node 
 object.
 • 'update’: Updates the sentence and confidence score of a term of the Node 
 object.
 Relationships: Used as the data structure for storing information in the 
-‘GenericsKbBSTApp’ class where it is connected in a hierarchical structure within the 
-binary search tree.
+‘GenericsKbBSTApp’ class where it is connected in a hierarchical structure within the binary search tree.
 3. ‘GenericsKbArrayApp’ class:
-Purpose: This class implements a knowledge base using a simple array of ‘Generics’ 
-objects. It provides functionality to load data from a file, add or update the statements 
-in the knowledge base, search for items by term, and search for items by both term 
-and sentence. Below is an overview of the methods and functionalities:
+Purpose: This class implements a knowledge base using a simple array of ‘Generics’ objects. It provides functionality to load data from a file, add or update the statements in the knowledge base, search for items by term, and search for items by both term and sentence. Below is an overview of the methods and functionalities:
 Instance Variables:
-• ‘private static int counter’: this variable counts the number of the lines in the 
-file, to create the array size of the counter.
-• ‘private static Generics[ ] knowledgebase’: The array holds the knowledge 
-base where the elements are of the instance of the ‘Generics’ class.
+• ‘private static int counter’: this variable counts the number of the lines in the file, to create the array size of the counter.
+• ‘private static Generics[ ] knowledgebase’: The array holds the knowledge base where the elements are of the instance of the ‘Generics’ class.
 Constructor: initializes the knowledge base to null.
-# Methods:
+
+Methods:
 • ‘loadFromFile’: 
-‘public static void loadFromFile(String file)’: Reads data from a file, and 
-inserts it into a knowledge base array and creates ‘Generics’ objects of each 
-line read into the file.
+‘public static void loadFromFile(String file)’: Reads data from a file, and inserts it into a knowledge base array and creates ‘Generics’ objects of each line read into the file.
 • ‘makeData’:
-‘public static Generic makeData(String data)’: Parses a string of data to 
-create a new ‘Generics’ object containing a term, sentence, and confidence 
-score that are separated by tabs. This method is used when loading data 
-from a file.
+‘public static Generic makeData(String data)’: Parses a string of data to create a new ‘Generics’ object containing a term, sentence, and confidence score that are separated by tabs. This method is used when loading data from a file.
 • ‘addStatementToKnowledgeBase’: 
-‘public static void addStatementToKnowledgeBase(String term, String 
-sentence, double score)’: Updates a sentence of an existing ‘Generics’ 
-object in the knowledge base for a specific term, and updates the confidence 
-score of the given term.
+‘public static void addStatementToKnowledgeBase(String term, String sentence, double score)’: Updates a sentence of an existing ‘Generics’ object in the knowledge base for a specific term, and updates the confidence score of the given term.
 • ‘searchTerm’: 
-‘public static void searchTerm(String term)’: Linear searches for a specific 
-term in the knowledge base and prints the corresponding sentence and 
-confidence score.
+‘public static void searchTerm(String term)’: Linear searches for a specific term in the knowledge base and prints the corresponding sentence and confidence score.
 • ‘similarSearches’:
-‘public static List<Generics> similarSearches(String term)’: Linear 
-searches for partial matches to a term in the knowledge base. Returns a list 
-of nodes containing partial matches or an empty list if not found.
+‘public static List<Generics> similarSearches(String term)’: Linear searches for partial matches to a term in the knowledge base. Returns a list of nodes containing partial matches or an empty list if not found.
 • ‘searchForTermAndSentence’:
-‘public static void searchForTermAndSentence(String term, String 
-sentence)’: Linear searches for a ‘Generics’ object in the knowledge base 
-array containing a specified term and sentence. If found, print the confidence 
-score, otherwise, print an appropriate message.
+‘public static void searchForTermAndSentence(String term, String sentence)’: Linear searches for a ‘Generics’ object in the knowledge base array containing a specified term and sentence. If found, print the confidence score, otherwise, print an appropriate message.
 • ‘displayMenu’:
-‘public static void displayMenu(Scanner input)’: Displays a method that 
-allows for user interaction with the knowledge base.
+‘public static void displayMenu(Scanner input)’: Displays a method that allows for user interaction with the knowledge base.
 • ‘main’:
-‘public static void main(String [ ] args)’: The main method to execute the 
-program.
+‘public static void main(String [ ] args)’: The main method to execute the program.
 
-
-# Error handling:
+Error handling:
 - If the user inserts an option that is not in the given list such as a number outside of 1 and 5, or a letter, the program will print that the user should only enter a number between 1 and 5.
 - File Not Found Exception: When attempting to load data from the file using the ‘loadFromFile’ method, the class catches a ‘FileNotFoundException’ if the specified file is not found, which is then rethrown, indicating to the calling code that the file cannot be located.
 - File Closing in Finally Block: in the ‘loadFromFile’ method, the file is closed in the ‘finally’ block to ensure that the resources are released, even if an exception occurs during the file processing.
@@ -95,7 +72,7 @@ Instance Variables:
 • ‘public static Node root’: This variable represents the root in the Binary Search Tree.
 Constructor: Initializes the ‘root’ to null, representing an empty tree.
 
-# Methods:
+Methods:
 • ‘loadFromFile’: 
 ‘public static void loadFromFile(String file)’: Reads date from a file into a binary search tree and creates ‘Node’ objects of each line read into the file.
 • ‘makeData’:
@@ -112,31 +89,32 @@ Constructor: Initializes the ‘root’ to null, representing an empty tree.
 ‘public static List<Node> similarSearches(Node node, String term)’:
 Recursively searches for partial matches to a term in the BST. Return a list of nodes containing partial matches or an empty list if not found.
 
-# Error handling:
+Error handling:
 - If the user inserts an option that is not in the given list such as a number outside of 1 and 5, or a letter, the program will print that the user should only enter a number between 1 and 5.
 - File Not Found Exception: Like the array implementation, this class catches a ‘FileNotFoundException’ when attempting to load data from a file in the ‘loadFromFile’ method, which is then rethrown for the calling code to handle.
 - Null Pointer Check Before Tree Operations: Before performing tree-related operations(searching and inserting) in methods like ‘search’ and ‘insert’, the class checks if the root node is null to avoid the ‘NullPointerException’.
 Relationships: Utilizes the ‘Node’ class for building and managing the Binary Search Tree in the context of the knowledge bases. Each instance of the ‘Node’ class encapsulates information about a specific term, sentence, and confidence score. The class is specifically tailored for use within the hierarchical structure of the BST. The hierarchical structure of the BST allows for quicker retrieval of knowledge base entries compared to linear search methods. The ‘Node’ class provides the necessary structure to facilitate efficient searching, insertion, and retrieval of knowledge base entries within a hierarchical tree.
 Usage Overview: Like the array implementation whereby the user interacts with a menu, where they can load a knowledge base from a file, add new statements, search for items by term, and search for items by term and sentence, or quit the program. The knowledge base is stored in a Binary Search Tree, and methods handle operations like insertion, search, and partial matching.
+
 User-Friendly Output: The BST and Array classes incorporate checks and provide messages to the user when certain events occur such as successfully 
 loading data from the file or when certain conditions are not met such as not loading the knowledge base before performing operations. This helps in avoiding silent failures and enhances the user experience by providing feedback on the outcome of operations. Both classes also make use of print statements to provide informative information about the execution of various methods, which aid in understanding the flow of the program and identifying potential issues.
 
-# Traditional Array Implementation:
+Traditional Array Implementation:
 This implementation provides a console-based interface for managing a knowledge base using an array data structure. The standard array data structure stores and manages data from the knowledge base, whereby each element in the array corresponds to a piece of information (term, sentence, confidence score).
-
-# Key Points:
+Key Points:
 • Data is stored in memory locations.
 • Accessing elements is done through indexing.
 • Insertion happens at the end of the array.
+
 Binary Search Tree implementation:
 Description: This implementation provides a console-based interface for managing a knowledge base using a Binary Search Tree data structure. The Binary Search Tree data structure involves using nodes to organize and store the information. Each node in the tree holds a piece of information, which is the term, sentence, and confidence score, and the tree provides efficient searching, inserting, and retrieval capabilities. The use of a Binary Search Tree allows for efficient searching and organizing of the knowledge base.
 
-# Key Points:
+Key Points:
 • Nodes are organized in a hierarchical tree structure.
 • Searching, and insertion have O(log n) complexity on worst.
 • It is well-suited for tasks involving frequent search operations.
 
-# Interactions:
+Interactions:
 • GenericsKbArrayApp and GenericsKbBSTApp:
 Both classes handle the knowledge base but have different ways of dealing with them.
 • GenericsKbArrayApp and Generics:
