@@ -1,8 +1,7 @@
-# DataStructures_Assignment1
-This assignment aims to create a Java program to query and update knowledge in GenericsKB, focusing on core functionality and potential additional features for a more elaborate application.
-
 # Name: Nikita Martin
 # Date: 1 March 2024
+# DataStructures_Assignment1
+This assignment aims to create a Java program to query and update knowledge in GenericsKB, focusing on core functionality and potential additional features for a more elaborate application.
 
 # Introduction
 The creation of appropriate data structures is important for enabling efficient information retrieval and analysis in dynamic areas of information management and knowledge representation. This report explores the creation, use, searching, and testing of a knowledge base management that makes use of many data structures and object-oriented concepts. In this assignment, two of the same applications will be created that allow a user to interact with a knowledge base, however, these applications will use different data structures. Building a strong platform that can store, query, and update data-related terms, sentences, and related confidence scores is the main goal of this assignment. By combining algorithmic efficiency with object-oriented concepts, the system seeks to offer user-friendly features for efficiently maintaining knowledge bases. The architecture of the implemented system, the relationship between its component classes, and the reasoning behind design decisions will all be covered in detail in this report. It will also provide insights into the testing process, demonstrating the system’s robustness in a variety of scenarios and the subtleties of its behaviour.
